@@ -25,10 +25,45 @@ function fun()
 
 const SLIDES_COUNT = 3;
 
-function slide()
-{
-    for (let i = 0; i < SLIDES_COUNT; i++) {
-        var _slide = document.getElementById('slide'+i.toString());
-        _slide.style.className = 'active';
+// function slide()
+// {
+//     for (let i = 0; i < SLIDES_COUNT; i++) {
+//         setTimeout(() => {
+//             index = 'slide' + i;
+//         var _slide = document.getElementById(index);
+//         _slide.className = 'active';
+//         }, 300);
+        
+//     }
+// }
+
+let index;
+var pics = document.getElementsByClassName('no-active');
+
+// setInterval(() => {
+//     if(index<SLIDES_COUNT)
+//     {
+//         i++;
+//     }
+//     else
+//     {
+//         index=0;
+//     }
+//     var _slide = document.getElementById('slide'+index);
+//     _slide.className = 'active';
+    
+//     }, 3000);
+
+    setInterval(()=>{
+        if(index<SLIDES_COUNT)
+    {
+        i++;
     }
-}
+    else
+    {
+        index=0;
+    }
+    var _slide = document.getElementById('slide'+index);
+    _slide.className = 'active';
+    
+    },300)
