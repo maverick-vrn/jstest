@@ -23,47 +23,43 @@ function fun()
     }
 }
 
-const SLIDES_COUNT = 3;
 
 // function slide()
 // {
-//     for (let i = 0; i < SLIDES_COUNT; i++) {
-//         setTimeout(() => {
-//             index = 'slide' + i;
-//         var _slide = document.getElementById(index);
-//         _slide.className = 'active';
-//         }, 300);
-        
-//     }
-// }
+    //     for (let i = 0; i < SLIDES_COUNT; i++) {
+        //         setTimeout(() => {
+            //             index = 'slide' + i;
+            //         var _slide = document.getElementById(index);
+            //         _slide.className = 'active';
+            //         }, 300);
+            
+            //     }
+            // }
+            
 
-let index;
-var pics = document.getElementsByClassName('no-active');
-
-// setInterval(() => {
-//     if(index<SLIDES_COUNT)
-//     {
-//         i++;
-//     }
-//     else
-//     {
-//         index=0;
-//     }
-//     var _slide = document.getElementById('slide'+index);
-//     _slide.className = 'active';
-    
-//     }, 3000);
-
-    setInterval(()=>{
-        if(index<SLIDES_COUNT)
+const SLIDES_COUNT = 3;    // Число слайдов
+let index=0;                // индекс текущей картинки
+setInterval(()=>{
+    if(index<SLIDES_COUNT)
     {
-        i++;
+        index++;
+        /* Если текущая картинка не последняя - переходим к следующей   */
     }
     else
     {
-        index=0;
+        index=1;
+        _slide = document.getElementById('slide'+SLIDES_COUNT);
+        _slide.className = 'no-active';        
+        /* Если отобразилась последняя картинка - ставим индекс на первую и прячем последнюю  */
     }
-    var _slide = document.getElementById('slide'+index);
+    var _slide = document.getElementById('slide'+index);   // Делаем активной картинку с текущим индексом 
     _slide.className = 'active';
+    // if (index>0) {
+        _slide = document.getElementById('slide'+(index-1));
+        _slide.className = 'no-active';
+        /*  Прячем предыдущую
+            If нужен для первого прохода - работает и без него  */
+    // }
+},1000)
+        
     
-    },300)
