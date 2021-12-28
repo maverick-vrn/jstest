@@ -1,13 +1,58 @@
-document.addEventListener('click', function(e) {
-    if (e.target.className == 'block')
-    {
-        r = Math.random().toString(16).substring(4,6);
-        g = Math.random().toString(16).substring(3,5);;
-        b = Math.random().toString(16).substring(5,7);;
-        e.target.style.backgroundColor = '#' + (r + g + b);
+var counter = 0; 
+var field = [0,1,2,3,4,5,6,7,8];
+
+document.addEventListener('click', function(event) {
+    // if (e.target.className == 'block')
+    // {
+    //     r = Math.random().toString(16).substring(4,6);
+    //     g = Math.random().toString(16).substring(3,5);;
+    //     b = Math.random().toString(16).substring(5,7);;
+    //     e.target.style.backgroundColor = '#' + (r + g + b);
+    // }
+    if (event.target.className == 'block') {
+        var cell = event.target.id;
+        counter++;
+        if (counter % 2 === 0)
+        {
+            event.target.style.backgroundColor = '#666';
+            update(cell, 'x');
+        }
+        else
+        {
+            event.target.style.backgroundColor = '#ddd';
+            update(cell, 'o');
+        }
     }
+
 });
 
+function update(cell, type) 
+{
+    check_win(field);
+    if (type == 'x')
+    {
+        field[cell] = 'x';
+    }
+    else
+    {
+        field[cell] = 'o';
+    }
+    check_win(field);
+}
+
+
+ function check_win(field) {
+     if ((field[0] == field[1]) && (field[1] == field[2])) {alert('You Win');}
+     if ((field[3] == field[4]) && (field[4] == field[5])) {alert('You Win');}
+     if ((field[6] == field[7]) && (field[7] == field[8])) {alert('You Win');}
+     
+     if ((field[0] == field[3]) && (field[3] == field[6])) {alert('You Win');}
+     if ((field[1] == field[4]) && (field[4] == field[7])) {alert('You Win');}
+     if ((field[2] == field[5]) && (field[5] == field[8])) {alert('You Win');}
+
+     if ((field[0] == field[4]) && (field[4] == field[8])) {alert('You Win');}
+     if ((field[2] == field[4]) && (field[4] == field[6])) {alert('You Win');}
+ }
 
 function fun()
 {
@@ -54,12 +99,12 @@ setInterval(()=>{
     }
     var _slide = document.getElementById('slide'+index);   // Делаем активной картинку с текущим индексом 
     _slide.className = 'active';
-    // if (index>0) {
+    if (index>0) {
         _slide = document.getElementById('slide'+(index-1));
         _slide.className = 'no-active';
         /*  Прячем предыдущую
             If нужен для первого прохода - работает и без него  */
-    // }
-},1000)
+     }
+},3000)
         
     
