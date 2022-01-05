@@ -28,7 +28,7 @@ document.addEventListener('click', function(event) {
 
 function update(cell, type) 
 {
-    check_win(field);
+    //check_win(field);
     if (type == 'x')
     {
         field[cell] = 'x';
@@ -56,9 +56,15 @@ function update(cell, type)
      var win = [[0,1,2],[3,4,5],[6,7,8],
                 [0,3,6],[1,4,7],[2,5,8],
                 [0,4,8],[2,4,6]];
+                
      win.forEach(element => {
-         if ( (field[element[0]] == field[element[1]]) && (field[element[1]] == field[element[2]]) )
-         {alert('You Win ! ! !');}
+        if ( (field[element[0]] == field[element[1]]) && (field[element[1]] == field[element[2]]) )
+        {
+            if (field[element[0]] == 'x')
+            {alert('X is the Winner !!!');}
+            else {alert('O is the Winner !!!');}
+            document.location.reload();
+        }
      });
  }
 
@@ -91,7 +97,8 @@ function fun()
             
 
 const SLIDES_COUNT = 3;    // Число слайдов
-let index=0;                // индекс текущей картинки
+let index=1;                
+// индекс текущей картинки, если по умочанию стоит первая картинка, то индекс = 1, если картинки нет индекс = 0
 setInterval(()=>{
     if(index<SLIDES_COUNT)
     {
@@ -113,6 +120,6 @@ setInterval(()=>{
         /*  Прячем предыдущую
             If нужен для первого прохода - работает и без него  */
      }
-},2000)
+},5000)
         
     
