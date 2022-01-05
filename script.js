@@ -85,15 +85,16 @@ function fun()
 
 // function slide()
 // {
-    //     for (let i = 0; i < SLIDES_COUNT; i++) {
-        //         setTimeout(() => {
-            //             index = 'slide' + i;
-            //         var _slide = document.getElementById(index);
-            //         _slide.className = 'active';
-            //         }, 300);
-            
-            //     }
-            // }
+//     for (let i = 0; i < SLIDES_COUNT; i++) 
+//     {
+//         setTimeout(() => {
+//             index = 'slide' + i;
+//             var _slide = document.getElementById(index);
+//             _slide.className = 'active';
+//             }, 300);
+        
+//     }
+// }
             
 
 const SLIDES_COUNT = 3;    // Число слайдов
