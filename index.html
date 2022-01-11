@@ -15,15 +15,31 @@
     position: absolute;
     left: 0;
     visibility: visible;
-    transition: opacity 2s;
+    transition: opacity 3s;
     }
     .no-active {
     visibility: hidden;
     opacity: 0;
     }
+    .info {
+        display: inline-block;
+        padding: 1%;
+        width: 300px;
+        height: 350px;
+        border: 1px solid;
+    }
+    .block2 {margin-left: 5%;}
+    .block1, .block2 {
+        cursor: pointer;
+    }
+    #block2 {display: none;}
 </style>
-<a href="www.google.com">Visit Google.com</a>
-<button onclick="fun()" style='position:relative;'>press</button>
+<a href="www.google.com">Visit Google.com</a><br>
+<button onclick="fun()" style='position:relative;'>press</button><br><br>
+<b class='block1' >BLOCK TEXT</b> 
+<b class='block2' >TEXT BLOCK </b><br>
+<div class="info" id='block1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
+<div class="info" id='block2'>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 <br>
 <div class='block' id='0'></div>
 <div class='block' id='1'></div>
@@ -36,7 +52,9 @@
 <div class='block' id='6'></div>
 <div class='block' id='7'></div>
 <div class='block' id='8'></div>
-<br><br><br>
+<br><br>
+<button onclick="reload()" style='position:relative;'>reload</button>
+<br>
 <div class='slider'>
 <img src=slide1.jpg id='slide1' class='active'>
 <img src=slide2.jpg id='slide2' class='no-active'>

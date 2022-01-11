@@ -14,14 +14,15 @@ document.addEventListener('click', function(event) {
         counter++;
         if (counter % 2 === 0)
         {
-            event.target.style.backgroundColor = '#666';
-            update(cell, 'x');
+            event.target.style.backgroundColor = '#ccc';
+            update(cell, 'o');
         }
         else
         {
-            event.target.style.backgroundColor = '#ddd';
-            update(cell, 'o');
+            event.target.style.backgroundColor = '#333';
+            update(cell, 'x');
         }
+        e
     }
 
 });
@@ -39,7 +40,11 @@ function update(cell, type)
     }
     check_win(field);
 }
-
+function reload() 
+{
+    document.location.reload();
+    field = [0,1,2,3,4,5,6,7,8];
+}
 
  function check_win(field) {
     //  if ((field[0] == field[1]) && (field[1] == field[2])) {alert('You Win');}
@@ -63,7 +68,7 @@ function update(cell, type)
             if (field[element[0]] == 'x')
             {alert('X is the Winner !!!');}
             else {alert('O is the Winner !!!');}
-            document.location.reload();
+            reload();
         }
      });
  }
@@ -78,7 +83,6 @@ function fun()
     else 
     {
         el.item(0).style.display='none';
-
     }
 }
 
@@ -98,7 +102,8 @@ function fun()
             
 
 const SLIDES_COUNT = 3;    // Число слайдов
-let index=1;                
+var index = 1;
+//if (document.getElementById('slide1').className == 'active') {index = 1;} else {index = 0;}         
 // индекс текущей картинки, если по умочанию стоит первая картинка, то индекс = 1, если картинки нет индекс = 0
 setInterval(()=>{
     if(index<SLIDES_COUNT)
@@ -123,4 +128,23 @@ setInterval(()=>{
      }
 },5000)
         
-    
+// function hide()
+// {
+//     if (document.getElementById('block2').style.display == 'none')
+//     {
+//         document.getElementById('block1').style.display = 'none';
+//         document.getElementById('block2').style.display = 'inline-block';
+//     }
+//     else
+//     {
+//         document.getElementById('block2').style.display = 'none';
+//         document.getElementById('block1').style.display = 'inline-block';
+//     }
+// }
+
+document.addEventListener('click', function(e){
+    var name = e.target.className;
+    var els = document.getElementsByClassName('info');
+    [].forEach.call(els, function(el) {el.style.display = 'none'});
+    document.getElementById(name).style.display = 'inline-block';
+})
