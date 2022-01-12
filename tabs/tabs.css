@@ -1,0 +1,15 @@
+.info {
+    display: inline-block;
+    padding: 1%;
+    width: 450px;
+    height: 250px;
+    border: 1px solid;
+}
+.tab2, .tab3, .tab4 {
+    margin-left: 1%;
+    color: #bbb;
+}
+.tab1, .tab2, .tab3, .tab4 {
+    cursor: pointer;
+}
+#tab2, #tab3, #tab4 {display: none;}

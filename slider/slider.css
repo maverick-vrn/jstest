@@ -1,0 +1,13 @@
+.slider{
+    position: relative;
+}
+.active {
+position: absolute;
+left: 0;
+visibility: visible;
+transition: opacity 3s;
+}
+.no-active {
+visibility: hidden;
+opacity: 0;
+}
